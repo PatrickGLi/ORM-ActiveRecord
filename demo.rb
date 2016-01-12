@@ -33,13 +33,19 @@ class FavoriteArtist < SQLObject
     foreign_key: :musician_id,
     class_name: "Musician"
   )
+
+  has_one_through(:musicgroup, :musician, :musicgroup)
 end
 
-#
-# p "All musicians: #{Musician.all}"
-#
-# p "First musician's first name: #{Musician.find(1).fname}"
-#
-# p "Musician named Justin: #{Musician.where(fname: 'Justin')}"
-#
+
+p "All musicians: #{Musician.all}"
+
+p "First musician's first name: #{Musician.find(1).fname}"
+
+p "Musician named Justin: #{Musician.where(fname: 'Justin')}"
+
 p "Galantis's artists: #{MusicGroup.find(1).musicians}"
+
+p "Stephen Thompson's music group: #{Musician.where(fname: 'Stephen').first.musicgroup}"
+
+p "Galantis likes Chris Brown: #{FavoriteArtist.find(1).musicgroup}"
