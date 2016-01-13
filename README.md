@@ -8,5 +8,5 @@ The purpose of building an ORM like ActiveRecord was to understand how ActiveRec
 
 ------
 Any class that inherits from my SQLObject class receives all the methods
-of ActiveRecord that I implemented, including has_many, belongs_to, and one_through
+of ActiveRecord that I implemented, including has_many, belongs_to, and has_one_through
 associations.
